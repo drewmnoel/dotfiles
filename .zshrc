@@ -16,6 +16,9 @@ alias show-spotify="xdotool search --class spotify windowmap"
 alias phpcs="phpcs --colors"
 alias hd='hexdump -C'
 alias find='noglob find'
+alias scp='noglob scp'
+alias rsync='noglob rsync'
+alias tmux='tmux -u'
 
 x() {
     xxd -ps $1 | tr -d '\n'

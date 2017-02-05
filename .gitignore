@@ -17,6 +17,8 @@
 .bundle
 .cache
 .cargo
+.conkyrc
+.docker
 .dropbox
 .eclipse
 .fehbg

@@ -192,6 +192,16 @@
         <command>rofi -show run</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer -c 2 set PCM 5%+</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer -c 2 set PCM 5%-</command>
+      </action>
+    </keybind>
     <keybind key="W-t">
       <action name="Execute">
         <command>terminator</command>
