@@ -48,5 +48,6 @@
 .vim
 .viminfo
 .xournal
+.xsession*
 .zcompdump*
 .zsh-update
