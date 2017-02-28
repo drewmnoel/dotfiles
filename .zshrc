@@ -24,6 +24,10 @@ x() {
     xxd -ps $1 | tr -d '\n'
 }
 
+texpdf() {
+    pdflatex $1 && pdflatex $1 && latexmk -c $1
+}
+
 gen() {
 	echo `tr -cd '[:alnum:]' < /dev/urandom | head -c$1`
 }
