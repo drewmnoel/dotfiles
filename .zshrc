@@ -49,6 +49,10 @@ powersave() {
     echo "."
 }
 
+pacsize() {
+    pacman -Qti | egrep "Name|Installed Size" | perl -pe 's|Name.*: (.*)\n|\1|' | perl -pe 's|Installed Size.*: (.*)| \1|' | sed -r 's/ (K|M)iB/\1B/' | sort -k2hr
+}
+
 zstyle ":completion:*:commands" rehash 1
 
 export FBFONT=/usr/share/kbd/consolefonts/ter-216n.psf.gz
