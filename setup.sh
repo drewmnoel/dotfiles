@@ -14,7 +14,7 @@ sudo apt install 2to3 apt-file bind9-dnsutils binutils-x86-64-linux-gnu \
 	python3-virtualenv samba samdump2 seclists secure-delete \
 	silversearcher-ag sipvicious smbclient smbmap smtp-user-enum \
 	snmp snmpcheck sslscan strace telnet tmux tnscmd10g tree \
-	virtualbox-guest-dkms virtualbox-guest-x11 whatweb wine32 \
+	virtualbox-guest-dkms virtualbox-guest-x11 whatweb \
 	winetricks wkhtmltopdf
 
 # Add our Kali key for fun
