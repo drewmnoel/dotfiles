@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- create:
+    - ~/tools/lpe
+
+- link:
+    ~/.ssh/authorized_keys: ssh/authorized_keys
+    ~/.vimrc:
+    ~/.zshrc:
+    ~/tools/Covenant: Covenant
+
+- shell:
+  - git submodule update --init --recursive
+  - go get github.com/jpillora/chisel
+  - GOOS=windows GOARCH=386 go get github.com/jpillora/chisel
+  - cp /usr/share/windows-resources/mimikatz/x64/mimikatz.exe ~/tools/lpe/mimi64.exe
+  - cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/tools/lpe/mimi32.exe
+  - rm -rf ~/.oh-my-zsh/
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
+
+- link:
+    ~/tools/lpe/winPEAS.exe: privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/Release/winPEASany.exe
+    ~/.oh-my-zsh/custom/plugins/tunip/tunip.plugin.zsh: zsh/tunip.plugin.zsh
+    ~/.oh-my-zsh/custom/plugins/htb/htb.plugin.zsh: zsh/htb.plugin.zsh
+    ~/.oh-my-zsh/custom/themes/lambda.zsh-theme: zsh/lambda.zsh-theme
