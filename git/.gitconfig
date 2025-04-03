@@ -1,0 +1,6 @@
+[user]
+	name = Drew Noel
+	email = drewmnoel@gmail.com
+[alias]
+	ci = commit
+	co = checkout

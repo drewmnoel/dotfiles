@@ -2,7 +2,6 @@
 !.config/terminator
 !.config/tint2
 .*auth*
-.*history
 .*license*
 .*log*
 .*swp

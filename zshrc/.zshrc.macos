@@ -1,0 +1,29 @@
+# zsh helpers, order matters!
+helpers=("share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" "share/zsh-autocomplete/zsh-autocomplete.plugin.zsh")
+for helper in $helpers; do
+  if test -e "${HOMEBREW_PREFIX}/${helper}"; then
+    source "${HOMEBREW_PREFIX}/${helper}"
+  fi
+done
+
+# Starship prompt
+if type starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# brew fpath nonsense
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
+# Menu completion
+# setopt menucomplete
+
+bindkey '\e[5D' backward-word
+bindkey '\e[5C' forward-word
+
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+# zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
+
+bindkey              '^I' menu-complete
+bindkey "$terminfo[kcbt]" menu-complete
